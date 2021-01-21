@@ -1,0 +1,111 @@
+What is Angular 9?
+
+Angular 9 is the latest version of Angular — a framework for building web and mobile client-side apps with JavaScript or more precisely a super-language of JavaScript called TypeScript built by Microsoft.
+
+New Features:
+
+Performance and file size are big downsides of Angular vs. React, Vue or Svelte.js.
+
+One major problem of the previous versions of Angular is the large size of the final bundle which impacts the download time and as a result the overall performance of the application.
+
+Angular 9 brings a few new features most importantly, the Ivy compiler which provides a huge boost in performance.
+
+In nutshell these are the new features of Angular 9:
+
+1) Smaller bundle sizes and augmented performance
+
+2) Faster testing
+
+3) Better debugging
+
+4) Improved CSS class and style binding
+
+5) Improved type checking
+
+6) Improved build errors
+
+7) Improved build times, enabling AOT on by default
+
+8)  The Ivy compiler: The default use of the Ivy compiler is the most important feature of Angular 9, Ivy is what actually designed to solve the major problems of Angular i.e the performance and large file size
+
+9) Selector-less bindings support for Angular Ivy
+
+10) Support for TypeScript Diagnostics Format
+
+11) Angular 9 makes it easy to use Google Maps and YouTube in your front-end apps.
+
+12) Angular 9 added support for TypeScript 3.7 and improved the IDE and language service extension which will increase the productivity of Angular developers and help them spot errors when developing apps.
+
+
+Ivy Compiler:
+
+Ivy is a complete rewrite of Angular’s rendering engine. In fact, it is the fourth rewrite of the engine and the third since Angular 2. But unlike rewrites two and three, which you might not have even noticed, Ivy promises huge improvements to your application. With Ivy, you can compile components more independently of each other. This improves development times since recompiling an application will only involve compiling the components that changed.
+
+Ivy also has a very big focus on tree-shaking. This is the process in which the TypeScript compiler looks at your code and figures out exactly which libraries are needed and then eliminates any unused code. As a result, the distributed code will be much smaller and the loading times of your application will improve.
+
+Angular Version 9 moves all applications to use the Ivy compiler and runtime by default. In addition to hundreds of bug fixes, the Ivy compiler and runtime offers numerous advantages such as : Smaller bundle size, Faster testing, Better debugging, Improved CSS class and style binding, Improved type checking, Improved build errors, etc.
+
+Reference: https://angular.io/guide/ivy
+
+Steps to enable Ivy Compiler in our project:
+
+npm i -g @angular/cli@latestng update
+
+or in your tsconfig.json file update this:
+
+{
+  "compilerOptions": {
+    "module": "esnext",
+    // ...
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "allowEmptyCodegenFiles": true
+  }
+}
+
+then your angular.json file:
+
+{
+  "projects": {
+    "your-project": {
+      "architect": {
+        "build": {
+          "options": {
+            ...
+            "aot": true,
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+Steps to update Angular 8 to Angular 9:
+
+1) Make sure you are using Node 10.13 or later.
+
+2) Run these commands:
+
+ng update @angular/core@8 @angular/cli@8 --allow-dirty
+npm install
+git commit -a -m "Upgrade to the latest version of Angular 8"
+
+ng update @angular/core @angular/cli --next
+{ ng update @angular/core@9 @angular/cli@9 --allow-dirty}
+
+npm install
+git commit -a  -m "Upgrade to Angular 9"
+
+ng update @angular/material --next --force
+
+npm i @angular/flex-layout@9.0.0-beta.29
+
+npm i -g @angular/cli@latest
+
+ng update
+
+
+Reference : https://update.angular.io/
